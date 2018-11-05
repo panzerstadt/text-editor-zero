@@ -30,7 +30,7 @@
   margin: 10px;
   padding: 5px;
   background-color: #ffffff;
-  color: #757575;
+  color: #d7263d;
   font-size: 15px;
   border: 0.05em salmon dashed;
   font-family: "Source Sans Pro", sans-serif;
@@ -52,6 +52,10 @@
 
 .text_format button {
   color: #a1a1a1;
+  text-decoration: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
 }
 
 .hide_placeholder {
