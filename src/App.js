@@ -1,25 +1,24 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+
+import styles from "./css/App.module.css";
+import Navbar from "./components/Navbar";
+import MinimalEditor from "./pages/Editor";
 
 class App extends Component {
+  state = {
+    editorRawText: ""
+  };
+  handleUpdate = this.handleUpdate.bind(this);
+
+  handleUpdate(value) {
+    this.setState({ editorRawText: value });
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div className={styles.App}>
+        <Navbar mode="default" editorRawText={this.state.editorRawText} />
+        <MinimalEditor mode="nice" handleUpdate={this.handleUpdate} />
       </div>
     );
   }
